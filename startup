@@ -1,0 +1,27 @@
+
+public class Startup {
+    public static void main(String[] args) {
+        try {
+            Stadium stadium1 = new Stadium();
+            System.out.println("Stadium 1: " + stadium1.getStadium_Name() + ", " + stadium1.getLocation() +
+                               ", Capacity: " + stadium1.getCapacity() + ", Area: " + stadium1.getArea_of_pitch());
+
+            Stadium stadium2 = new Stadium("National Arena", "City A");
+            System.out.println("Stadium 2: " + stadium2.getStadium_Name() + ", " + stadium2.getLocation() +
+                               ", Capacity: " + stadium2.getCapacity() + ", Area: " + stadium2.getArea_of_pitch());
+
+            Stadium stadium3 = new Stadium("Olympic Stadium", "City B", 50000, 105.5f);
+            System.out.println("Stadium 3: " + stadium3.getStadium_Name() + ", " + stadium3.getLocation() +
+                               ", Capacity: " + stadium3.getCapacity() + ", Area: " + stadium3.getArea_of_pitch());
+
+            stadium3.setCapacity(60000);
+            stadium3.setArea_of_pitch(110.0f);
+            System.out.println("Updated Stadium 3: " + stadium3.getStadium_Name() + ", " + stadium3.getLocation() +
+                               ", Capacity: " + stadium3.getCapacity() + ", Area: " + stadium3.getArea_of_pitch());
+
+            stadium3.setCapacity(-100); // This will throw an exception
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
